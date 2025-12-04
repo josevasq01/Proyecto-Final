@@ -47,7 +47,7 @@ Después de **cada acción del jugador**, el mapa se actualiza visualmente.
 
 ---
 
-## 🤖 IA Guardian (Jugador 2)
+## IA Guardian (Jugador 2)
 
 La IA ejecuta hasta **3 acciones por turno**, en este orden:
 
