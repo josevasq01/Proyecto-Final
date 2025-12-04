@@ -4,7 +4,7 @@ Este proyecto implementa un juego de estrategia por turnos donde el jugador comp
 
 ---
 
-## ⚙️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 La arquitectura se divide en módulos independientes para permitir mantenimiento y ampliación:
 
@@ -75,7 +75,7 @@ Unidad movida y capturó (x,y)
 
 ---
 
-## 🏗️ Edificios y Unidades
+## Edificios y Unidades
 
 ### **Edificios**
 | Edificio | Función | Habilita |
@@ -96,7 +96,7 @@ Unidad movida y capturó (x,y)
 
 ---
 
-## 📊 Balance del Juego
+## Balance del Juego
 
 ### **Cálculo de dominio**
 Dominio = (celdas ocupadas / total celdas) * 100
@@ -141,7 +141,7 @@ Dominio = (celdas ocupadas / total celdas) * 100
 
 ---
 
-## 📝 Conclusión
+## Conclusión
 
 Este proyecto implementa un sistema modular de estrategia por turnos con IA funcional,
 economía, construcción, control territorial y reportes claros de acciones.
