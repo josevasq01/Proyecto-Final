@@ -1,0 +1,351 @@
+============================================================
+Turno #1
+Objetivo: Alcanzar 60% de dominio antes del turno 20
+Recursos: Comida=18 | Metal=12 | Energia=7
+Jugador: Dominio=11% | Sistema: Dominio=11%
+Neutrales: 77%
+Alerta: Sin alertas importantes
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][  ../PA][  ../AG][  ../AG][  ../PA]
+  1 [  ../PA][  ../AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][  ../BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][  ../LL]
+  4 [  ../LL][  ../PA][  ../LL][  ../LL][  ../BO][  ../LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+
+Acciones restantes: 2
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:2
+
+--- Reclutar Unidad ---
+1) Soldado
+2) Arquero
+3) Caballero
+4) Mago
+5) Ingeniero
+Selecciona una opcion:1
+
+Lugar (x y):1 0
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1So/BO][  ../PA][  ../AG][  ../AG][  ../PA]
+  1 [  ../PA][  ../AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][  ../BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][  ../LL]
+  4 [  ../LL][  ../PA][  ../LL][  ../LL][  ../BO][  ../LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+
+Acciones restantes: 1
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:3
+
+Edificio (Granja/Cuartel/Torre/Forja):Torre
+
+Lugar (x y):0 1
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1So/BO][  ../PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][  ../AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][  ../BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][  ../LL]
+  4 [  ../LL][  ../PA][  ../LL][  ../LL][  ../BO][  ../LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+--------- Acciones de la IA ---------
+Recluto Soldado en (5,4)
+Construyo Cuartel en (4,4)
+-------------------------------------
+============================================================
+Turno #2
+Objetivo: Alcanzar 60% de dominio antes del turno 20
+Recursos: Comida=16 | Metal=9 | Energia=7
+Jugador: Dominio=16% | Sistema: Dominio=25%
+Neutrales: 58%
+Alerta: Sin alertas importantes
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1So/BO][  ../PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][  ../AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][  ../BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][  ../LL]
+  4 [  ../LL][  ../PA][  ../LL][  ../LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+
+Acciones restantes: 2
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:1
+
+Desde (x y):1 0
+
+Hasta (x y):2 0
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][  ../AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][  ../BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][  ../LL]
+  4 [  ../LL][  ../PA][  ../LL][  ../LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+
+Acciones restantes: 1
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:2
+
+--- Reclutar Unidad ---
+1) Soldado
+2) Arquero
+3) Caballero
+4) Mago
+5) Ingeniero
+Selecciona una opcion:2
+
+Lugar (x y):1 1
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Ar/AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][  ../BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][  ../LL]
+  4 [  ../LL][  ../PA][  ../LL][  ../LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+--------- Acciones de la IA ---------
+Recluto Soldado en (3,4)
+Construyo Torre en (5,3)
+-------------------------------------
+============================================================
+Turno #3
+Objetivo: Alcanzar 60% de dominio antes del turno 20
+Recursos: Comida=13 | Metal=8 | Energia=7
+Jugador: Dominio=19% | Sistema: Dominio=30%
+Neutrales: 50%
+Alerta: Sin alertas importantes
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Ar/AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][  ../BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+
+Acciones restantes: 2
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:1
+
+Desde (x y):1 1
+
+Hasta (x y):1 2
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][  ../AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][J1Ar/BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+
+Acciones restantes: 1
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:3
+
+Edificio (Granja/Cuartel/Torre/Forja):Forja
+
+Lugar (x y):1 1
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][J1Ar/BO][  ../LL][  ../BO][  ../MO][  ../BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][  ../BO][J2Cu/LL]
+
+--------- Acciones de la IA ---------
+Recluto Soldado en (4,5)
+Construyo Torre en (5,2)
+-------------------------------------
+============================================================
+Turno #4
+Objetivo: Alcanzar 60% de dominio antes del turno 20
+Recursos: Comida=10 | Metal=8 | Energia=6
+Jugador: Dominio=25% | Sistema: Dominio=36%
+Neutrales: 38%
+Alerta: Guardianes activos en cuadrante noreste
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [  ../PA][J1Ar/BO][  ../LL][  ../BO][  ../MO][J2To/BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][J2So/BO][J2Cu/LL]
+
+
+Acciones restantes: 2
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:3
+
+Edificio (Granja/Cuartel/Torre/Forja):Granja
+
+Lugar (x y):0 2
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][  ../BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [J1Gr/PA][J1Ar/BO][  ../LL][  ../BO][  ../MO][J2To/BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][J2So/BO][J2Cu/LL]
+
+
+Acciones restantes: 1
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:2
+
+--- Reclutar Unidad ---
+1) Soldado
+2) Arquero
+3) Caballero
+4) Mago
+5) Ingeniero
+Selecciona una opcion:4
+
+Lugar (x y):1 0
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1Ma/BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][  ../BO][  ../MO]
+  2 [J1Gr/PA][J1Ar/BO][  ../LL][  ../BO][  ../MO][J2To/BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][  ../AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][J2So/BO][J2Cu/LL]
+
+--------- Acciones de la IA ---------
+Recluto Arquero en (4,3)
+Construyo Forja en (4,1)
+-------------------------------------
+============================================================
+Turno #5
+Objetivo: Alcanzar 60% de dominio antes del turno 20
+Recursos: Comida=8 | Metal=8 | Energia=4
+Jugador: Dominio=30% | Sistema: Dominio=50%
+Neutrales: 19%
+Alerta: Guardianes activos en cuadrante noreste
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1Ma/BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][J2Fo/BO][  ../MO]
+  2 [J1Gr/PA][J1Ar/BO][  ../LL][  ../BO][  ../MO][J2To/BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][J2Ar/AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][J2So/BO][J2Cu/LL]
+
+
+Acciones restantes: 2
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:3
+
+Edificio (Granja/Cuartel/Torre/Forja):Forja
+
+Lugar (x y):2 2
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1Ma/BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][J2Fo/BO][  ../MO]
+  2 [J1Gr/PA][J1Ar/BO][J1Fo/LL][  ../BO][  ../MO][J2To/BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][J2Ar/AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][J2So/BO][J2Cu/LL]
+
+
+Acciones restantes: 1
+Acciones:
+1) Mover unidad
+2) Reclutar unidad
+3) Construir edificio
+4) Pasar
+Selecciona una opcion:2
+
+--- Reclutar Unidad ---
+1) Soldado
+2) Arquero
+3) Caballero
+4) Mago
+5) Ingeniero
+Selecciona una opcion:5
+
+Lugar (x y):3 2
+
+
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1Ma/BO][J1So/PA][  ../AG][  ../AG][  ../PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][J2Fo/BO][  ../MO]
+  2 [J1Gr/PA][J1Ar/BO][J1Fo/LL][J1In/BO][  ../MO][J2To/BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][J2Ar/AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][J2So/BO][J2Cu/LL]
+
+--------- Acciones de la IA ---------
+Recluto Arquero en (4,2)
+Construyo Torre en (5,0)
+-------------------------------------
+
+===================== FIN DE LA PARTIDA =====================
+     Dominio jugador: 41%      |      Dominio IA: 41%
+         0        1        2        3        4        5
+  0 [J1Cu/LL][J1Ma/BO][J1So/PA][  ../AG][  ../AG][J2To/PA]
+  1 [J1To/PA][J1Fo/AG][  ../LL][  ../PA][J2Fo/BO][  ../MO]
+  2 [J1Gr/PA][J1Ar/BO][J1Fo/LL][J1In/BO][J2Ar/MO][J2To/BO]
+  3 [  ../AG][  ../BO][  ../AG][  ../MO][J2Ar/AG][J2To/LL]
+  4 [  ../LL][  ../PA][  ../LL][J2So/LL][J2Cu/BO][J2So/LL]
+  5 [  ../AG][  ../MO][  ../AG][  ../MO][J2So/BO][J2Cu/LL]
+
+=========================== EMPATE ==========================
