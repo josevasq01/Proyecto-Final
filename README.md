@@ -1,4 +1,4 @@
-# 🧠 Proyecto Final – Juego de Estrategia por Turnos con IA Guardian
+# Proyecto Final – Juego de Estrategia por Turnos con IA Guardian
 
 Este proyecto implementa un juego de estrategia por turnos donde el jugador compite contra una IA por el dominio del mapa. Incluye sistemas de economía, reclutamiento, construcción, movimiento, control territorial y un motor de IA modular.
 
@@ -29,7 +29,7 @@ La arquitectura se divide en módulos independientes para permitir mantenimiento
 
 ---
 
-## 🔄 Flujo del Turno
+## Flujo del Turno
 
 turnoInicio()
 → impresión de mapa y recursos
@@ -73,9 +73,6 @@ Recluto Soldado en (x,y)
 Construyo Torre en (x,y)
 Unidad movida y capturó (x,y)
 
-yaml
-Copiar código
-
 ---
 
 ## 🏗️ Edificios y Unidades
@@ -104,9 +101,6 @@ Copiar código
 ### **Cálculo de dominio**
 Dominio = (celdas ocupadas / total celdas) * 100
 
-markdown
-Copiar código
-
 ### **Condiciones de victoria**
 - **Victoria inmediata** → si el jugador domina más territorio que la IA.  
 - **Derrota** → si al turno 20 la IA tiene igual o mayor dominio.  
@@ -119,7 +113,7 @@ Copiar código
 
 ---
 
-## 🧪 Casos de Prueba
+## Casos de Prueba
 
 ### **Reclutamiento**
 - Reclutar en celda vacía → éxito.
