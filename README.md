@@ -1,220 +1,155 @@
-DOCUMENTO TÉCNICO – Sistema de Juego por Turnos con IA Guardian
-1. Arquitectura General del Sistema
+# 🧠 Proyecto Final – Juego de Estrategia por Turnos con IA Guardian
 
-El proyecto implementa un juego de estrategia por turnos basado en dominio territorial.
-La arquitectura sigue un modelo modular orientado a componentes:
+Este proyecto implementa un juego de estrategia por turnos donde el jugador compite contra una IA por el dominio del mapa. Incluye sistemas de economía, reclutamiento, construcción, movimiento, control territorial y un motor de IA modular.
 
-1.1 Módulos Principales
+---
 
-Juego
-Orquesta el ciclo por turnos: inicio → fase del jugador → fase del mundo → evaluación → fin.
+## ⚙️ Arquitectura del Sistema
 
-Contexto
-Contiene el estado global: mapa, recursos, turnos, bitácora, unidades y edificios.
+La arquitectura se divide en módulos independientes para permitir mantenimiento y ampliación:
 
-MapaMundo
-Gestiona las celdas del mapa, almacenamiento de unidades, edificios, terreno y funciones:
+### **Módulos principales**
+- **`Juego`**  
+  Ciclo completo del turno: inicio → fase jugador → IA → evaluación → fin.
 
-moveUnit()
+- **`Contexto`**  
+  Estado global: mapa, recursos, unidades, edificios, dominio, bitácora.
 
-recruitAt()
+- **`MapaMundo`**  
+  Manejo de celdas y reglas: movimiento, reclutamiento, construcción y conteo territorial.
 
-constructAt()
+- **`MotorEventos`**  
+  Ejecuta efectos o alteraciones ambientales del mundo.
 
-countOwned()
+- **`GestorRecursos`**  
+  Controla producción económica y mantenimiento de unidades.
 
-MotorEventos
-Procesa eventos ambientales o neutrales del turno (opcional en versión actual).
+- **`IA_Guardian`**  
+  Lógica del jugador 2: recluta, construye y captura territorio.
 
-GestorRecursos
-Aplica:
+---
 
-Producción de edificios (comida, metal, energía).
+## 🔄 Flujo del Turno
 
-Mantenimiento de unidades.
+turnoInicio()
+→ impresión de mapa y recursos
+→ faseJugador()
+→ mover / reclutar / construir / pasar
+→ faseMundo()
+→ IA + eventos + producción
+→ evaluarCondiciones()
+→ turnoFin()
 
-Validación de recursos para nuevas acciones.
+markdown
+Copiar código
 
-Consola
-Maneja impresión del mapa, menús y entrada del usuario.
+Después de **cada acción del jugador**, el mapa se actualiza visualmente.
 
-IA_Guardian
-Inteligencia artificial que gestiona reclutamiento, construcción y movimiento del jugador 2.
+---
 
-2. Arquitectura Interna del Turno
+## 🤖 IA Guardian (Jugador 2)
 
-Cada turno sigue un flujo fijo:
+La IA ejecuta hasta **3 acciones por turno**, en este orden:
 
-turnoInicio()  
- → Render inicial  
- → faseJugador()  
-   → acciones (mover / reclutar / construir)  
- → faseMundo()  
-   → IA + eventos + producción  
- → evaluarCondiciones()  
- → turnoFin()
+### **1. Reclutamiento**
+- Prioriza Soldado y Arquero.
+- Caballero y Mago requieren una **Forja**.
 
+### **2. Construcción**
+Orden de prioridad:
+1. Construir **Cuartel** si no tiene suficientes.
+2. Construir **Torre** si ya tiene cuarteles.
+3. Construir **Forja** si ya tiene torres.
+4. Construir **Granja** si la comida está baja.
 
-El diseño asegura consistencia del estado y claridad en la interacción entre sistemas.
+### **3. Movimiento ofensivo**
+- Captura edificios enemigos adyacentes.
+- Se expande hacia celdas neutrales estratégicas.
 
-3. Sistema de Eventos
+### **Registro de acciones**
+Solo se muestran logs del turno actual:
 
-El motor de eventos (MotorEventos) permite incorporar efectos externos al jugador:
+Recluto Soldado en (x,y)
+Construyo Torre en (x,y)
+Unidad movida y capturó (x,y)
 
-Aparición de guardianes neutrales.
+yaml
+Copiar código
 
-Penalidades por terreno.
+---
 
-Alertas contextuales para enriquecer la jugabilidad.
+## 🏗️ Edificios y Unidades
 
-Su ejecución ocurre antes de la IA, permitiendo que influya en sus decisiones.
+### **Edificios**
+| Edificio | Función | Habilita |
+|----------|---------|-----------|
+| **Granja** | Produce Comida | — |
+| **Cuartel** | Permite reclutar unidades básicas | Soldado, Arquero |
+| **Torre** | Defensa territorial | — |
+| **Forja** | Tecnología avanzada | Caballero, Mago |
 
-4. IA Guardian
+### **Unidades**
+| Unidad | Requisito | Rol |
+|--------|-----------|------|
+| Soldado | Cuartel | Básico, económico |
+| Arquero | Cuartel | Ataques a distancia (si aplica) |
+| Ingeniero | Ninguno | Soporte |
+| Caballero | Forja | Alta resistencia |
+| Mago | Forja | Avanzado |
 
-La IA tiene un sistema de tres “slots” por turno:
+---
 
-4.1 Reglas de Acción
+## 📊 Balance del Juego
 
-Reclutamiento
+### **Cálculo de dominio**
+Dominio = (celdas ocupadas / total celdas) * 100
 
-Prioriza unidades económicas (Soldado y Arquero).
+markdown
+Copiar código
 
-Solo usa recursos disponibles.
+### **Condiciones de victoria**
+- **Victoria inmediata** → si el jugador domina más territorio que la IA.  
+- **Derrota** → si al turno 20 la IA tiene igual o mayor dominio.  
+- **Victoria alternativa** → si el jugador posee **≥60% del mapa**.
 
-Construcción (prioridades)
+### **Economía**
+- Edificios producen recursos cada turno.
+- Unidades consumen mantenimiento.
+- La construcción o reclutamiento falla si no hay recursos suficientes.
 
-Si tiene <2 Cuarteles → construir Cuartel  
-Si tiene <2 Torres y ya poseé Cuartel → construir Torre  
-Si tiene <1 Forja y ya posee Torre → construir Forja  
-Si comida <10 → construir Granja  
+---
 
+## 🧪 Casos de Prueba
 
-Movimiento ofensivo básico
+### **Reclutamiento**
+- Reclutar en celda vacía → éxito.
+- Reclutar sobre unidad/edificio → error correcto.
+- Reclutar sin recursos → rechazo esperado.
 
-Si detecta casilla enemiga adyacente → intenta capturar.
+### **Construcción**
+- Terreno válido → éxito.
+- Intentar construir sobre ocupantes → error.
+- Construir Forja sin Torre → prohibido.
 
-Movimiento simple hacia edificios sin dueño.
+### **Movimiento**
+- Movimientos válidos funcionan.
+- Movimiento hacia casilla ocupada → rechazado.
+- Movimiento hacia edificio enemigo → captura.
 
-4.2 Registro de acciones
+### **IA**
+- IA sin cuartel → construye cuartel.
+- IA sin comida → construye granja.
+- IA cerca de enemigo → ataca.
 
-Cada acción ejecutada se registra como:
+### **Condiciones de victoria**
+- Jugador supera dominio IA → victoria.
+- Al turno 20 IA ≥ jugador → derrota.
 
-IA: recluto <unidad> en (x,y)
-IA: construyo <edificio> en (x,y)
-IA: movio unidad hacia ...
+---
 
+## 📝 Conclusión
 
-El juego imprime solo los logs generados en esta fase.
+Este proyecto implementa un sistema modular de estrategia por turnos con IA funcional,
+economía, construcción, control territorial y reportes claros de acciones.
 
-5. Balance de Juego
-
-El balance se diseñó para que ambos jugadores escalen su poder progresivamente:
-
-5.1 Costos y producción
-
-Granja → genera comida
-
-Cuartel → habilita reclutamiento avanzado
-
-Torre → defensa y estructura de progresión
-
-Forja → habilita Caballero y Mago
-
-Mantenimiento evita reclutamiento infinito
-
-Esto asegura progreso controlado y obliga a tomar decisiones económicas.
-
-5.2 Sistema de Dominio
-
-Cada celda dominada se contabiliza:
-
-porcentaje = (celdas dueño / total celdas) * 100
-
-
-Condiciones de fin:
-
-Victoria del jugador: domina más territorio que la IA.
-
-Derrota: la IA iguala o supera dominio tras el turno 20.
-
-Victoria alternativa: ≥60% del mapa en cualquier turno.
-
-Este sistema incentiva expansión territorial constante.
-
-6. Casos de Prueba
-
-A continuación, pruebas recomendadas para validar comportamiento del sistema:
-
-6.1 Caso de Prueba: Reclutamiento
-
-Objetivo: asegurar que unidades solo se reclutan si hay espacio y recursos.
-Entradas: posición válida, posición ocupada, falta de recursos.
-Resultado esperado:
-
-Reclutamiento válido ✔
-
-Mensaje de error en caso contrario ✔
-
-6.2 Caso de Prueba: Construcción
-
-Objetivo: validar construcción según terreno y requisitos.
-Pruebas:
-
-Construir en terreno válido
-
-Construir en terreno prohibido
-
-Construir sobre un edificio/unidad
-
-Construcción por IA en secuencia jerárquica
-
-Resultado: restricciones coherentes y mensaje adecuado.
-
-6.3 Caso de Prueba: Movimiento
-
-Casos:
-
-Movimiento dentro del mapa
-
-Movimiento a celda ocupada
-
-Movimiento enemigo → captura
-
-Resultado:
-
-Movimiento aplicado correctamente
-
-Captura actualiza propietario de la celda
-
-6.4 Caso de Prueba: Producción y Mantenimiento
-
-Validar que la cantidad de recursos aumenta o disminuye según edificios activos.
-
-6.5 Caso de Prueba: IA
-
-Objetivo: verificar que IA cumple prioridades.
-Pasos:
-
-Iniciar turno sin cuarteles → IA debe construir uno.
-
-Recursos bajos → IA debe construir granja.
-
-Unidad enemiga adyacente → IA debe mover/atacar.
-
-6.6 Caso de Prueba: Condiciones de Victoria
-
-Entrada: distintos valores de dominio.
-Resultado:
-
-Jugador gana si domina más.
-
-IA gana si empata o supera pasados 20 turnos.
-
-Victoria inmediata al 60%.
-
-Conclusión
-
-El sistema está compuesto por módulos cohesivos y desacoplados, lo que facilita mantenimiento y ampliaciones (más IA, nuevos terrenos, nuevos edificios).
-La IA, aunque simple, respeta una jerarquía de prioridades que genera partidas consistentes.
-El balance económico asegura que las decisiones del jugador y la IA tengan impacto significativo.
-Los casos de prueba permiten validar la integridad del sistema y asegurar estabilidad en versiones futuras.
+El diseño permite agregar fácilmente nuevas unidades, edificios o comportamientos.
